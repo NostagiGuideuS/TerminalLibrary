@@ -9,12 +9,12 @@
 
 <a name = "getData"/>
 ## 1. GetData
-	Bao gồm các class biểu diễn các đối tượng thực được sử dụng trong chương trình
+Bao gồm các class biểu diễn các đối tượng thực được sử dụng trong chương trình
 
 
 <a name = "OuterData" />
 ## 2. OuterData
-	Folder trống <empty> để lưu các file sách tải về 
+Folder trống <empty> để lưu các file sách tải về 
 
 
 <a name = "DatabaseConnector" />
