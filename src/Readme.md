@@ -7,21 +7,28 @@
 * [4. Tạm - FirstRunExample](#...)
 * [5. Giao diện - test](#...)
 
+<a name = "..." />
+
 <a name = "getData"/>
-## 1. GetData
-Bao gồm các class biểu diễn các đối tượng thực được sử dụng trong chương trình
+
+## I, GetData
+Bao gồm các class biểu diễn các đối tượng thực được sử dụng trong chương trình.
 
 
 <a name = "OuterData" />
-## 2. OuterData
-Folder trống <empty> để lưu các file sách tải về 
+
+## II, OuterData
+Folder trống <empty> để lưu các file sách tải về.
+
 
 
 <a name = "DatabaseConnector" />
-## 3. DatabaseConnector
+
+## III, DatabaseConnector
 Bao gồm các class có chức năng liên kết và lấy thông tin từ database.
 Cụ thể:
-###- DatabaseConnector 
+
+  ### DatabaseConnector 
 - connection Connection -> Dây liên kết tới database
 
 - getJDBCConnection() -> Connection : Tạo connection với database
@@ -29,7 +36,7 @@ Cụ thể:
 + closeConnection -> void : Ngắt kết nối với database khi chương trình kết thúc
 
 
-###- DBLogin extends DatabaseConnector
+  ### DBLogin extends DatabaseConnector
 + final static int FIRST_LOG_IN, TRUE_LOG_IN, FAIL_LOG_IN
 
 + logIn(userID String, password String) int -> Check đăng nhập. Trả về 1 trong 3 final
@@ -37,25 +44,25 @@ Cụ thể:
 + changePassword(userID String, oldPassword, newPassword) int -> Đổi mật khẩu. Trả về 1 trong 2 final
 
 
-###- DBUser extends DatabaseConnector
+  ### DBUser extends DatabaseConnector
 + getUserInfo(currentUser User) User -> Trả về thông tin đầy đủ của user hiện tại. Cơ bản thì User chung chung không lưu thông tin chi tiết, mà thường chỉ có userID để thao tác thôi.
 + changeUserName(userID String, newUserName String) boolean
 + changeContact(userID String, newUserName String) boolean
 	 	
 
-###- DBBook  extends DatabaseConnector
+  ### DBBook  extends DatabaseConnector
 + findBook(keyword String, searchBy int, sortBy int) List<Book> -> Hàm tìm kiếm chung
 + findBook(bookID String) Book -> Hàm tìm kiếm theo ID cụ thể.
 
 
-###- DBRequest extends DatabaseConnector
+  ### DBRequest extends DatabaseConnector
 + borrowBook(userID String, bookID String, quantity int) -> tạo yêu cầu mượn sách
 + returnBook(requestNeedToReturn Request) -> yêu cầu trả sách
 + UnreturnBookList(userID String) List<Book> -> danh sách sách chưa trả
 + everBorrowBookList(userID String) List<Book> -> danh sách sách đã và đang mượn.
 
 
-###- UpdateFile extends DatabaseConnector
+  ### UpdateFile extends DatabaseConnector
 + uploadBookFileToDatabase(bookID String, fin File) boolean -> upload lên, ko check lại thông tin (tức là ghi đè)
 - getBookFileFromDatabase(bookID String) File -> download về
 - openFile(file File) void -> ném file ra desktop và mở bằng app mặc định
