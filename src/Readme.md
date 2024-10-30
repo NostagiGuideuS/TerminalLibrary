@@ -22,9 +22,9 @@ Folder trống <empty> để lưu các file sách tải về
 Bao gồm các class có chức năng liên kết và lấy thông tin từ database.
 Cụ thể:
 ###- DatabaseConnector 
-# connection Connection -> Dây liên kết tới database
+- connection Connection -> Dây liên kết tới database
 
-# getJDBCConnection() -> Connection : Tạo connection với database
+- getJDBCConnection() -> Connection : Tạo connection với database
 + firstTODO() -> void : Tổng hợp các thao tác đầu tiên cần thực hiện.
 + closeConnection -> void : Ngắt kết nối với database khi chương trình kết thúc
 
